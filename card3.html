@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      * {
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+      }
+      body {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        background-color: #333;
+      }
+      .container {
+        position: relative;
+        width: 350px;
+        height: 190px;
+        background-color: #333;
+        transition: 0.5s;
+      }
+      .container:hover {
+        height: 450px;
+      }
+
+      .content {
+        position: absolute;
+        inset: 0;
+        background-color: #000;
+        overflow: hidden;
+      }
+      .content::before {
+        content: '';
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        width: 600px;
+        height: 120px;
+        background: linear-gradient(transparent, rgba(34, 193, 195), rgb(253, 187, 45), transparent);
+        transform: translate(-50%, -50%);
+        animation: animation 4s linear infinite;
+      }
+      @keyframes animation {
+        0% {
+          transform: translate(-50%, -50%) rotate(0deg);
+        }
+        100% {
+          transform: translate(-50%, -50%) rotate(360deg);
+        }
+      }
+      .container .content::after {
+        content: '';
+        position: absolute;
+        inset: 2px;
+        background-color: #292929;
+      }
+      /* 2nd */
+      .img-box {
+        position: absolute;
+        top: -50px;
+        left: 50%;
+        transform: translateX(-50%);
+        background-color: #000;
+        width: 150px;
+        height: 150px;
+        z-index: 10;
+        overflow: hidden;
+        transition: 0.5s;
+      }
+      .container:hover .img-box {
+        height: 250px;
+        width: 250px;
+      }
+      .img-box::before {
+        content: '';
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        height: 120px;
+        width: 500px;
+        transform: translate(-50%, -50%);
+        background: linear-gradient(transparent, rgba(34, 193, 195), rgb(253, 187, 45), transparent);
+        animation: animation2 6s linear infinite;
+      }
+      @keyframes animation2 {
+        0% {
+          transform: translate(-50%, -50%) rotate(360deg);
+        }
+        100% {
+          transform: translate(-50%, -50%) rotate(0deg);
+        }
+      }
+      .img-box::after {
+        content: '';
+        position: absolute;
+        inset: 2px;
+        background-color: #333;
+      }
+      img {
+        position: relative;
+        z-index: 1;
+        top: 10px;
+        left: 10px;
+        height: calc(100% - 20px);
+        width: calc(100% - 20px);
+        filter: grayscale(1);
+        object-fit: cover;
+      }
+      .content-data {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: flex-end;
+        overflow: hidden;
+      }
+      .detail {
+        padding: 40px;
+        text-align: center;
+        width: 100%;
+        transition: 0.5s;
+        transform: translateY(130px);
+      }
+      .container:hover .detail {
+        transform: translateY(0px);
+      }
+      .detail > h2 {
+        color: #45f3ff;
+        font-weight: 600;
+        font-size: 1.25em;
+        line-height: 1.2em;
+      }
+      .detail > h2 > span {
+        font-size: 0.75em;
+        font-weight: 500;
+        color: #fff;
+      }
+      .data {
+        display: flex;
+        justify-content: space-between;
+      }
+      .data > h3 {
+        color: #45f3ff;
+        font-weight: 600;
+        font-size: 1em;
+        line-height: 1.2em;
+      }
+      .data > h3 > span {
+        font-size: 0.85em;
+        font-weight: 400;
+        color: #fff;
+      }
+      .action-btn > button {
+        border: none;
+        outline: none;
+        padding: 10px 30px;
+        border-radius: 5px;
+        font-size: 1em;
+        color: #222;
+        cursor: pointer;
+        background-color: #45f3ff;
+        margin-top: 10px;
+      }
+      .action-btn > button:nth-child(2) {
+        background-color: #fff;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="content"></div>
+      <div class="img-box">
+        <img src="./pexels-alexander-grey-1148998.jpg" />
+      </div>
+      <div class="content-data">
+        <div class="detail">
+          <h2>Ahmad Noor <br /><span> Web Dev</span></h2>
+          <div class="data">
+            <h3>
+              7<br />
+              <span>Post</span>
+            </h3>
+            <h3>
+              0 <br />
+              <span>Followers</span>
+            </h3>
+            <h3>
+              0 <br />
+              <span>Following</span>
+            </h3>
+          </div>
+          <div class="action-btn">
+            <button>Follow</button>
+            <button>Message</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

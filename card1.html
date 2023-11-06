@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
+      body {
+        margin: 0;
+        padding: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+      }
+      .container {
+        height: 400px;
+        width: 300px;
+        position: relative;
+        overflow: hidden;
+      }
+      img {
+        height: 100%;
+        width: 100%;
+        object-fit: cover;
+      }
+      .content {
+        height: 100%;
+        width: 100%;
+        position: absolute;
+        top: 0;
+        right: -100%;
+        background-color: #46524170;
+        backdrop-filter: blur(5px);
+        transition: 1s;
+      }
+      .content > div {
+        padding: 20px;
+        height: 300px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+      }
+      .btn {
+        width: 120px;
+        text-align: center;
+        background-color: #465241;
+        padding: 10px 10px;
+      }
+      .container:hover .content {
+        top: 0;
+        right: 0%;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <img src="./pexels-consuelo-borroni-14661918.jpg" />
+      <div class="content">
+        <div>
+          <h2 style="color: #465241">Visit This Place</h2>
+          <p style="color: #465241">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Odio esse nulla vitae harum maxime quaerat?
+          </p>
+          <p class="btn">Visit Place</p>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

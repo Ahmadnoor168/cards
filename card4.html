@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      body {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+      }
+      .container {
+        height: 500px;
+        width: 350px;
+      }
+      .card {
+        height: 100%;
+        width: 100%;
+        position: relative;
+        transition: 1.5s;
+        transform-style: preserve-3d;
+      }
+      .card:hover {
+        transform: rotateY(180deg);
+      }
+      .front,
+      .back {
+        height: 100%;
+        width: 100%;
+        border-radius: 2em;
+        box-shadow: 0 0 5px 2px rgba(50, 50, 50, 0.25);
+        overflow: auto;
+        position: absolute;
+        backface-visibility: hidden;
+      }
+      .front {
+        background-image: url('https://source.unsplash.com/random/350x500');
+        /* background-image: url('./pexels-consuelo-borroni-14661918.jpg'); */
+        height: 500px;
+        width: 350px;
+        background-size: cover;
+      }
+      .back {
+        background-color: #3a3a3a;
+        transform: rotateY(180deg);
+        color: wheat;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        gap: 30px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="card">
+        <div class="front"></div>
+        <div class="back">
+          <h1>Back Card</h1>
+          <h1>Additional info on the back of card</h1>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
